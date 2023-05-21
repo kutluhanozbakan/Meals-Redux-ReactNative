@@ -12,19 +12,26 @@ function FavoritesContextProvider({ children }) {
   function addFavorite(id) {
     setFavoriteMealIds((currentFavIds) => [...currentFavIds, id]);
   }
+
   function removeFavorite(id) {
     setFavoriteMealIds((currentFavIds) =>
       currentFavIds.filter((mealId) => mealId !== id)
     );
   }
 
+  console.log(FavoritesContext);
+
   const value = {
     ids: favoriteMealIds,
     addFavorite: addFavorite,
-    removeFavorite: removeFavorite
+    removeFavorite: removeFavorite,
   };
 
-  return <FavoritesContext.Provider value={value}>{children}</FavoritesContext.Provider>;
+  return (
+    <FavoritesContext.Provider value={value}>
+      {children}
+    </FavoritesContext.Provider>
+  );
 }
 
-export default FavoritesContextProvider();
+export default FavoritesContextProvider;
