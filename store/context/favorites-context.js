@@ -19,7 +19,6 @@ function FavoritesContextProvider({ children }) {
     );
   }
 
-  console.log(FavoritesContext);
 
   const value = {
     ids: favoriteMealIds,
